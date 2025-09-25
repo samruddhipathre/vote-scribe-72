@@ -2,41 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Voting Platform Design System - Modern, Clean, Professional */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core colors - Modern voting platform theme */
+    --background: 250 50% 98%;
+    --foreground: 220 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep Blue for trust and professionalism */
+    --primary: 220 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 85% 40%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light blue accent */
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 220 30% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 220 15% 94%;
+    --accent-foreground: 220 30% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success - Green for completed votes */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warning - Orange for pending/expiring polls */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 85% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom voting platform colors */
+    --vote-option-bg: 220 15% 97%;
+    --vote-option-hover: 220 20% 94%;
+    --vote-progress: 220 85% 45%;
+    --vote-progress-bg: 220 15% 90%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 85% 45%), hsl(240 80% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 15% 96%), hsl(220 20% 92%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 85% 45%) 0%, hsl(240 80% 55%) 50%, hsl(260 75% 60%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 15% 45% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 15% 45% / 0.1), 0 2px 4px -1px hsl(220 15% 45% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 15% 45% / 0.1), 0 4px 6px -2px hsl(220 15% 45% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(220 15% 45% / 0.1), 0 10px 10px -5px hsl(220 15% 45% / 0.04);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +87,61 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme for voting platform */
+    --background: 220 30% 8%;
+    --foreground: 220 15% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 30% 10%;
+    --card-foreground: 220 15% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 30% 10%;
+    --popover-foreground: 220 15% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 220 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 85% 50%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 220 15% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 30% 12%;
+    --muted-foreground: 220 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 220 30% 14%;
+    --accent-foreground: 220 15% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --warning: 38 92% 60%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 220 85% 55%;
+
+    /* Dark theme voting colors */
+    --vote-option-bg: 220 30% 12%;
+    --vote-option-hover: 220 30% 16%;
+    --vote-progress: 220 85% 55%;
+    --vote-progress-bg: 220 30% 18%;
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 85% 55%), hsl(240 80% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 30% 12%), hsl(220 30% 16%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 85% 55%) 0%, hsl(240 80% 65%) 50%, hsl(260 75% 70%) 100%);
+
+    --sidebar-background: 220 30% 8%;
+    --sidebar-foreground: 220 15% 85%;
+    --sidebar-primary: 220 85% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 220 30% 14%;
+    --sidebar-accent-foreground: 220 15% 85%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 220 85% 55%;
   }
 }
 
@@ -101,5 +152,52 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Components for Voting Platform */
+@layer components {
+  .vote-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300;
+  }
+
+  .vote-option {
+    @apply w-full p-4 text-left rounded-md border border-border bg-vote-option-bg hover:bg-vote-option-hover transition-all duration-200 cursor-pointer;
+  }
+
+  .vote-option:hover {
+    @apply border-primary shadow-sm;
+  }
+
+  .vote-progress-bar {
+    @apply w-full bg-vote-progress-bg rounded-full h-3 overflow-hidden;
+  }
+
+  .vote-progress-fill {
+    @apply h-full bg-gradient-to-r from-primary to-primary-hover transition-all duration-500 ease-out;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
   }
 }

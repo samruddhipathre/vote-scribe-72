@@ -22,10 +22,19 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -46,6 +55,14 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        "vote-option": {
+          bg: "hsl(var(--vote-option-bg))",
+          hover: "hsl(var(--vote-option-hover))",
+        },
+        "vote-progress": {
+          DEFAULT: "hsl(var(--vote-progress))",
+          bg: "hsl(var(--vote-progress-bg))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

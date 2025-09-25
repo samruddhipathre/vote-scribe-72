@@ -1,13 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import PollsPage from "./PollsPage";
+import { Poll, User } from "@/types/voting";
 
-const Index = () => {
+interface IndexProps {
+  polls: Poll[];
+  userVotes: { [pollId: string]: string[] };
+  user?: User;
+  isLoading?: boolean;
+  onLoadPolls: () => void;
+}
+
+const Index = ({ polls, userVotes, user, isLoading, onLoadPolls }: IndexProps) => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <PollsPage 
+      polls={polls}
+      userVotes={userVotes}
+      user={user}
+      isLoading={isLoading}
+      onLoadPolls={onLoadPolls}
+    />
   );
 };
 
